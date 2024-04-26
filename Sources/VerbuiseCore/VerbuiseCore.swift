@@ -48,7 +48,7 @@ public class Verbuise {
         var translated: String = value
         
         keys.forEach { key in
-            let replace = translations![self.liveLanguageISOCode]?[key] ?? "||missing translation key||"
+            let replace = translations![self.liveLanguageCode.isoCode]?[key] ?? "||missing translation key||"
             
             translated = translated.replacingOccurrences(of: key, with: replace)
         }
