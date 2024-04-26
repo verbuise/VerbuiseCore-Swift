@@ -34,7 +34,7 @@ public enum VerbuiseLanguageCode: CaseIterable {
     case gujarati
     case iranianPersian
     
-    var longName: String {
+    public var longName: String {
         switch self {
         case .mandarinChinese:
             return "Mandarin Chinese"
@@ -89,7 +89,7 @@ public enum VerbuiseLanguageCode: CaseIterable {
         }
     }
     
-    var isoCode: String {
+    public var isoCode: String {
         switch self {
         case .mandarinChinese: return "zh"
         case .spanish: return "es"
@@ -119,5 +119,5 @@ public enum VerbuiseLanguageCode: CaseIterable {
         }
     }
     
-    var id: Self { self }
+    public var id: Self { self }
 }

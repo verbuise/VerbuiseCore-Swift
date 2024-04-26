@@ -64,18 +64,6 @@ public class Verbuise {
     }
 }
 
-func convertStringToDictionary(text: String) -> [String: [String:String]]? {
-   if let data = text.data(using: .utf8) {
-       do {
-           let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: [String:String]]
-           return json
-       } catch {
-           print("Something went wrong")
-       }
-   }
-   return nil
-}
-
 // TODO: Date extension
 
 // TODO: Currency extension
