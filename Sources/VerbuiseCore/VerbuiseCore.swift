@@ -11,7 +11,7 @@ private struct VerbuiseKeys {
 
 private var InitiatedProject = VerbuiseKeys()
 
-func VerbuiseInit(apiKey: String, username: String, projectName: String) -> Bool {
+public func VerbuiseInit(apiKey: String, username: String, projectName: String) -> Bool {
     InitiatedProject.apiKey = apiKey
     InitiatedProject.project = projectName
     InitiatedProject.organization = username
@@ -21,7 +21,7 @@ func VerbuiseInit(apiKey: String, username: String, projectName: String) -> Bool
     return true
 }
 
-extension String {
+public extension String {
     func localize() -> String {
         return self.replacingOccurrences(of: " ", with: "_")
     }
