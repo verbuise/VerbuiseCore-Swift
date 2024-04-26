@@ -11,18 +11,36 @@ private struct VerbuiseKeys {
 
 private var InitiatedProject = VerbuiseKeys()
 
-public func VerbuiseInit(apiKey: String, username: String, projectName: String) -> Bool {
-    InitiatedProject.apiKey = apiKey
-    InitiatedProject.project = projectName
-    InitiatedProject.organization = username
+public struct Verbuise {
+    var apiKey: String
+    var project: String
+    var organization: String
+    var liveLanguageCode: VerbuiseLanguageCode
     
-    // value validation
+    private var liveLanguageName: String
+
+    init(apiKey: String, project: String, organization: String, liveLanguageCode: VerbuiseLanguageCode) {
+        self.apiKey = apiKey
+        self.project = project
+        self.organization = organization
+        self.liveLanguageCode = liveLanguageCode
+        self.liveLanguageName = VerbuiseLanguageName(from: liveLanguageCode)
+    }
     
-    return true
+    // TODO: Fetch translations from API
+    
+    // TODO: Use this function to translate string from fetched translations
+    static func translate(string: String, lang: VerbuiseLanguageCode) -> String {
+        return ""
+    }
 }
 
 public extension String {
-    func localize() -> String {
-        return self.replacingOccurrences(of: " ", with: "_")
+    func localize(_ vb: Verbuise) -> String {
+        return String("\(self.replacingOccurrences(of: " ", with: "_"))")
     }
 }
+
+// TODO: Date extension
+
+// TODO: Currency extension

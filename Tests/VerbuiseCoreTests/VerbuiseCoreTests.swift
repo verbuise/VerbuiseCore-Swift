@@ -3,10 +3,8 @@ import XCTest
 
 final class VerbuiseCoreTests: XCTestCase {
     func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
-
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+        let vb: Verbuise = Verbuise(apiKey: "", project: "", organization: "", liveLanguageCode: .english)
+        
+        print("hello world".localize(vb))
     }
 }
