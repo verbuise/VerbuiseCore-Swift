@@ -39,10 +39,10 @@ public class Verbuise {
     }
     
     @available(macOS 10.15, *)
-    struct VerbuiseLanguagePicker: View {
+    public struct VerbuiseLanguagePicker: View {
         @Binding var liveLanguageCode: VerbuiseLanguageCode
         
-        var body: some View {
+        public var body: some View {
             Picker(selection: $liveLanguageCode, label: Text("Change language")) {
                 ForEach(VerbuiseLanguageCode.allCases, id: \.self) { item in
                     Text(item.longName).tag(item)
