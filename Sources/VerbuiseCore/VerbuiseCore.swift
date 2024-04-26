@@ -2,6 +2,7 @@
 // https://docs.swift.org/swift-book
 
 import Foundation
+import SwiftUI
 
 public class Verbuise {
     var apiKey: String
@@ -36,6 +37,20 @@ public class Verbuise {
             }
         }
     }
+    
+    @available(macOS 10.15, *)
+    struct VerbuiseLanguagePicker: View {
+        @Binding var liveLanguageCode: VerbuiseLanguageCode
+        
+        var body: some View {
+            Picker(selection: $liveLanguageCode, label: Text("Change language")) {
+                ForEach(VerbuiseLanguageCode.allCases, id: \.self) { item in
+                    Text(item.longName).tag(item)
+                }
+            }
+        }
+    }
+
     
     public func localize(_ value: String) -> String {
         guard translationsLoaded else {
