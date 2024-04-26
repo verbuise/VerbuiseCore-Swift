@@ -38,20 +38,6 @@ public class Verbuise {
         }
     }
     
-    @available(macOS 10.15, *)
-    public struct VerbuiseLanguagePicker: View {
-        @Binding var liveLanguageCode: VerbuiseLanguageCode
-        
-        public var body: some View {
-            Picker(selection: $liveLanguageCode, label: Text("Change language")) {
-                ForEach(VerbuiseLanguageCode.allCases, id: \.self) { item in
-                    Text(item.longName).tag(item)
-                }
-            }
-        }
-    }
-
-    
     public func localize(_ value: String) -> String {
         guard translationsLoaded else {
             return "Translations not ready"
