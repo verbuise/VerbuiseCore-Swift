@@ -47,7 +47,7 @@ public class Verbuise {
     }
 }
 
-extension String {
+public extension String {
     func localize(vb: Verbuise) -> String {
         guard vb.translationsLoaded else {
             return "Translations not ready"
