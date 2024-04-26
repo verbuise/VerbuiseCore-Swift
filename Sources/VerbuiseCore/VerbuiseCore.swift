@@ -15,7 +15,7 @@ public class Verbuise {
     var liveLanguageName: String
     var liveLanguageISOCode: String
     
-    private var translationsLoaded = false
+    var translationsLoaded = false
 
     @available(macOS 10.15, *)
     @available(iOS 15.0, *)
@@ -38,30 +38,32 @@ public class Verbuise {
         }
     }
     
-    public func localize(_ value: String) -> String {
-        guard translationsLoaded else {
-            return "Translations not ready"
-        }
-        
-       let keys = value.components(separatedBy: " ")
-        
-        var translated: String = value
-        
-        keys.forEach { key in
-            let replace = translations![liveLanguageCode.isoCode]?[key] ?? "||missing translation key||"
-            
-            translated = translated.replacingOccurrences(of: key, with: replace)
-        }
-        
-        return translated
-    }
-    
     // TODO: Fetch translations from API
     
 
     // TODO: Use this function to translate string from fetched translations
     static func translate(string: String, lang: VerbuiseLanguageCode) -> String {
         return ""
+    }
+}
+
+extension String {
+    func localize(vb: Verbuise) -> String {
+        guard vb.translationsLoaded else {
+            return "Translations not ready"
+        }
+        
+       let keys = self.components(separatedBy: " ")
+        
+        var translated: String = self
+        
+        keys.forEach { key in
+            let replace = vb.translations![vb.liveLanguageCode.isoCode]?[key] ?? "||missing translation key||"
+            
+            translated = translated.replacingOccurrences(of: key, with: replace)
+        }
+        
+        return translated
     }
 }
 
