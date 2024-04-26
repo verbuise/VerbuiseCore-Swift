@@ -3,7 +3,7 @@
 
 import Foundation
 
-public class Verbuise {
+public struct Verbuise {
     var apiKey: String
     var project: String
     var organization: String
@@ -25,6 +25,7 @@ public class Verbuise {
         
         let url: URL = URL(string: "https://verbuise.com/example.json")!
 
+        @available(iOS 15.0, *)
         let (data, _) = try! await URLSession.shared.data(from: url)
         self.translations = try! JSONDecoder().decode([String: [String: String]].self, from: data)
     }
