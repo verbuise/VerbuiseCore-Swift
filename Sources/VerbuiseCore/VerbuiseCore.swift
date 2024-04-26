@@ -15,6 +15,7 @@ public struct Verbuise {
     var liveLanguageISOCode: String
 
     @available(macOS 10.15, *)
+    @available(iOS 15.0, *)
     public init(apiKey: String, project: String, organization: String, liveLanguageCode: VerbuiseLanguageCode) async {
         self.apiKey = apiKey
         self.project = project
@@ -24,8 +25,6 @@ public struct Verbuise {
         self.liveLanguageISOCode = liveLanguageCode.isoCode
         
         let url: URL = URL(string: "https://verbuise.com/example.json")!
-
-        @available(iOS 15.0, *)
         let (data, _) = try! await URLSession.shared.data(from: url)
         self.translations = try! JSONDecoder().decode([String: [String: String]].self, from: data)
     }
