@@ -29,7 +29,7 @@ public class Verbuise {
         self.translations = try! JSONDecoder().decode([String: [String: String]].self, from: data)
     }
     
-    func localize(_ value: String) -> String {
+    public func localize(_ value: String) -> String {
        let keys = value.components(separatedBy: " ")
         
         var translated: String = value
