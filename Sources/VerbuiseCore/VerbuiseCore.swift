@@ -3,14 +3,6 @@
 
 import Foundation
 
-private struct VerbuiseKeys {
-    var apiKey: String = ""
-    var project: String = ""
-    var organization: String = ""
-}
-
-private var InitiatedProject = VerbuiseKeys()
-
 public struct Verbuise {
     var apiKey: String
     var project: String
@@ -19,7 +11,7 @@ public struct Verbuise {
     
     private var liveLanguageName: String
 
-    init(apiKey: String, project: String, organization: String, liveLanguageCode: VerbuiseLanguageCode) {
+    public init(apiKey: String, project: String, organization: String, liveLanguageCode: VerbuiseLanguageCode) {
         self.apiKey = apiKey
         self.project = project
         self.organization = organization
