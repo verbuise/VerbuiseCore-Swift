@@ -4,12 +4,12 @@
 
 This is the Swift client package for the VerbuiseCore API.
 
-The full documentation is available at [https://docs.verbuise.com/clients/swift](https://docs.verbuise.com/clients/swift).
+The full documentation is available at [https://developer.verbuise.com/sdk/swift](https://docs.verbuise.com/clients/swift).
 
 **Other clients**<br>
 | Language | Source Code | Documentation |
 | -------- | ----------- | ------------- |
-|NodeJS|[GitHub](https://github.com/verbuise/VerbuiseCore-Node)|[Documentation](https://docs.verbuise.com/clients/node)|
-|Swift|[GitHub](https://github.com/verbuise/VerbuiseCore-Swift)|[Documentation](https://docs.verbuise.com/clients/swift)|
-|Browser JS|[GitHub](https://github.com/verbuise/VerbuiseCore-Web)|[Documentation](https://docs.verbuise.com/clients/web)|
-|Kotlin|[GitHub](https://github.com/verbuise/VerbuiseCore-Kotlin)|[Documentation](https://docs.verbuise.com/clients/kotlin)|
+|NodeJS|[GitHub](https://github.com/verbuise/VerbuiseCore-Node)|[Documentation](https://developer.verbuise.com/sdk/node)|
+|Swift|[GitHub](https://github.com/verbuise/VerbuiseCore-Swift)|[Documentation](https://developer.verbuise.com/sdk/swift)|
+|Browser JS|[GitHub](https://github.com/verbuise/VerbuiseCore-Web)|[Documentation](https://developer.verbuise.com/sdk/web)|
+|Kotlin|[GitHub](https://github.com/verbuise/VerbuiseCore-Kotlin)|[Documentation](https://developer.verbuise.com/sdk/kotlin)|
