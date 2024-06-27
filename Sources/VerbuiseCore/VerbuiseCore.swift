@@ -66,7 +66,7 @@ public class Verbuise {
 }
 
 public extension String {
-    func localize(_ vb: Verbuise) -> String {
+    func localize(@Binding _ vb: Verbuise) -> String {
         guard vb.translationsLoaded else {
             return "Translations not ready"
         }
