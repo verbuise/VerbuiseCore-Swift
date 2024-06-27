@@ -66,6 +66,10 @@ public class Verbuise {
 }
 
 public extension String {
+    @available(tvOS 13.0, *)
+    @available(watchOS 6.0, *)
+    @available(iOS 13.0, *)
+    @available(macOS 10.15, *)
     func localize(@Binding _ vb: Verbuise) -> String {
         guard vb.translationsLoaded else {
             return "Translations not ready"
