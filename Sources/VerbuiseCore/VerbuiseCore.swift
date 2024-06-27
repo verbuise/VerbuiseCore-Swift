@@ -8,7 +8,7 @@ public class Verbuise {
     var apiKey: String
     var project: String
     var organization: String
-    public var liveLanguageCode: VerbuiseLanguageCode
+    public var liveLanguageCode: VerbuiseLanguageCode!
     
     var translations: [String: [String: String]]?
     
