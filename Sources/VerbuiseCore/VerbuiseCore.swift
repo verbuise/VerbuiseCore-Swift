@@ -66,7 +66,7 @@ public class Verbuise {
 }
 
 public extension String {
-    func localize(_ vb: Verbuise) -> String {
+    func localize(_ vb: Verbuise, code: VerbuiseLanguageCode) -> String {
         guard vb.translationsLoaded else {
             return "Translations not ready"
         }
@@ -76,7 +76,7 @@ public extension String {
         var translated: String = self
         
         keys.forEach { key in
-            let replace = vb.translations![vb.liveLanguageCode.isoCode]?[key] ?? "||missing translation key||"
+            let replace = vb.translations![code.isoCode]?[key] ?? "||missing translation key||"
             
             translated = translated.replacingOccurrences(of: key, with: replace)
         }
